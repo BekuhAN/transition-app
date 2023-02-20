@@ -12,6 +12,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 <script>
@@ -29,7 +30,9 @@ export default {
   background: url('@/assets/image/promo.jpg');
   padding: 200px 0;
   position: relative;
-  &_row {align-items: center;}
+  &_row {
+    align-items: center;
+  }
   &:after {
     content: '';
     position: absolute;

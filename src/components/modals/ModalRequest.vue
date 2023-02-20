@@ -201,22 +201,5 @@ export default {
     font-size: 20px;
   }
 }
-.v-modal__content {
-  border-radius: 10px;
-}
-.v-modal__title {
-  padding: 20px 35px;
-}
-.v-modal__heading {
-  position: relative;
-}
-.v-modal__close-btn {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  transform: scale(2);
-}
-.mx-datepicker-popup {
-  z-index: 9999999 !important;
-}
+
 </style>

@@ -15,6 +15,7 @@ export default {
     placeholder: String,
     label: String,
     theme: String,
+    readOnly: Boolean
   },
 };
 </script>

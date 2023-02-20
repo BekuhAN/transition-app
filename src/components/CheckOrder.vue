@@ -1,22 +1,33 @@
 <template>
-  <form class="checkOrder">
+  <form @submit="showModalStatusClick" class="checkOrder">
     <p class="checkOrder__text">Отслеживание заявки</p>
-
     <InputText :placeholder="'№ заявки'" />
     <div class="checkOrder__button">
-      <ButtonUI :text="'Проверить'" :variant="'block'" />
+      <ButtonUI
+        :text="'Проверить'"
+        :variant="'block'"
+      />
     </div>
+    <ModalStatus />
   </form>
 </template>
 <script>
 import ButtonUI from './ui-kit/Button.vue';
 import InputText from './ui-kit/InputText.vue';
+import ModalStatus from './modals/ModalStatus.vue';
 
 export default {
   name: 'CheckOrderComponent',
   components: {
     ButtonUI,
     InputText,
+    ModalStatus,
+  },
+  methods: {
+    showModalStatusClick(event) {
+      event.preventDefault();
+      this.$modals.show('modal-status');
+    },
   },
 };
 </script>
