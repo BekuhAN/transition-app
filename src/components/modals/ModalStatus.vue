@@ -1,5 +1,5 @@
 <template>
-  <vue-modal name="modal-status" size="'md'">
+  <vue-modal name="modal-status" :size="'md'">
     <h2 slot="header" class="modal__header">Статус заявки № 1</h2>
     <div class="modal__content">
       <div class="row">

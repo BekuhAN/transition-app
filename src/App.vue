@@ -1,34 +1,22 @@
 <template>
   <div id="app">
-    <HeaderComponent />
-    <PromoComponent />
-    <SectionPark />
-    <AdvantagesSection />
-    <AboutSection />
-    <FooterLayout />
-    <CopyRightComponent />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './components/Header.vue';
-import FooterLayout from './components/Footer.vue';
-import PromoComponent from './components/Promo.vue';
-import SectionPark from './components/sections/Park.vue';
-import AdvantagesSection from './components/sections/Advantages.vue';
-import AboutSection from './components/sections/About.vue';
-import CopyRightComponent from './components/Copyright.vue';
 
 export default {
   name: 'App',
-  components: {
-    HeaderComponent,
-    PromoComponent,
-    SectionPark,
-    AdvantagesSection,
-    AboutSection,
-    FooterLayout,
-    CopyRightComponent
+
+  watch: {
+    '$route.params.search': {
+      handler: function (search) {
+        console.log(search);
+      },
+      deep: true,
+      immediate: true,
+    },
   },
 };
 </script>
@@ -43,10 +31,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
-
 
 html,
 body,
@@ -172,7 +158,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-body, html {
+body,
+html {
   scroll-behavior: smooth;
 }
 
