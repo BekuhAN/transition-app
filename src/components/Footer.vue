@@ -8,7 +8,7 @@
             Если возникли вопросы<br />
             свяжитесь с нами
           </p>
-          <row class="social row">
+          <div class="social row">
             <div class="social__item col_50">
               <SocialItem
                 :icon="'fa-phone'"
@@ -41,7 +41,7 @@
                 :description="'+7 (900) 259-50-81'"
               />
             </div>
-          </row>
+          </div>
         </div>
         <div class="col_50">
           <form class="footer__form" action="">

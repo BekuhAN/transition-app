@@ -28,7 +28,7 @@ export default {
     AdvantagesSection,
     AboutSection,
     FooterLayout,
-    CopyRightComponent,
+    CopyRightComponent
   },
 };
 </script>
@@ -276,6 +276,9 @@ $columns: (
   &.justify-content-between {
     justify-content: space-between;
   }
+  &.justify-content-end {
+    justify-content: end;
+  }
 }
 [class^='col#{$prefix}'] {
   padding: 0 var(--gutter);
@@ -286,6 +289,9 @@ $columns: (
   padding: 0 var(--gutter);
   &#{$prefix}auto {
     flex: 0 1;
+  }
+  &#{$prefix}offest#{$prefix}20 {
+    margin-left: 20%;
   }
   @each $name, $size in $columns {
     &#{$prefix}#{$name} {

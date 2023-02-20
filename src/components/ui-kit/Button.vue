@@ -1,5 +1,5 @@
 <template>
-  <button class="button" :class="{'button_block': variant === 'block', 'button_secondary': variant === 'secondary'}">
+  <button class="button" @click="click()" :class="{'button_block': variant === 'block', 'button_secondary': variant === 'secondary'}">
     {{ text }}
   </button>
 </template>
@@ -8,8 +8,13 @@ export default {
   name: 'ButtonUI',
   props: {
     text: String,
-    variant: String,
+    variant: String
   },
+  methods: {
+    click() {
+        this.$emit('on-click')
+    }
+  }
 };
 </script>
 <style lang="scss">
