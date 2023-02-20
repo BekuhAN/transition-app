@@ -28,21 +28,32 @@
               </ul>
             </nav>
             <div class="navigation__button">
-              <ButtonUI :text="'Оформить заявку'" />
+              <ButtonUI
+                :text="'Оформить заявку'"
+                @on-click="showModalRequestClick"
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
+    <ModalRequest />
   </header>
 </template>
 <script>
 import ButtonUI from './ui-kit/Button.vue';
+import ModalRequest from './modals/ModalRequest.vue';
 
 export default {
   name: 'HeaderComponent',
   components: {
     ButtonUI,
+    ModalRequest,
+  },
+  methods: {
+    showModalRequestClick() {
+      this.$modals.show('modal-request');
+    },
   },
 };
 </script>
