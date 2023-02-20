@@ -4,6 +4,7 @@
     <input
       :placeholder="placeholder"
       class="input"
+      :type="type ? type : 'text'"
       :class="{ input_gray: theme === 'gray' }"
     />
   </div>
@@ -15,7 +16,8 @@ export default {
     placeholder: String,
     label: String,
     theme: String,
-    readOnly: Boolean
+    readOnly: Boolean,
+    type: String
   },
 };
 </script>
