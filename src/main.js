@@ -9,10 +9,24 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 Vue.use(VueModal);
 
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPhone,
+  faEnvelope,
+  faXmark,
+  faPen,
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 import { faWhatsapp, faTelegram } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faPhone, faWhatsapp, faEnvelope, faTelegram);
+library.add(
+  faPhone,
+  faWhatsapp,
+  faEnvelope,
+  faTelegram,
+  faXmark,
+  faPen,
+  faCheck
+);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;

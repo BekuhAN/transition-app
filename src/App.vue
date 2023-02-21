@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
@@ -285,6 +284,9 @@ $columns: (
   }
   &#{$prefix}offest#{$prefix}20 {
     margin-left: 20%;
+  }
+  &#{$prefix}offset#{$prefix}40 {
+    margin-left: 40%;
   }
   @each $name, $size in $columns {
     &#{$prefix}#{$name} {

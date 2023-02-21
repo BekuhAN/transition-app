@@ -1,5 +1,8 @@
 <template>
-  <label class="input__label">
+  <label
+    class="input__label"
+    :class="{ input__label_white: theme === 'white' }"
+  >
     <input class="input__checkbox" type="checkbox" :name="name" :id="id" />
     {{ label }}
     <span class="input__mark"></span>
@@ -12,6 +15,7 @@ export default {
     name: String,
     id: String,
     label: String,
+    theme: String,
   },
 };
 </script>
@@ -29,6 +33,12 @@ export default {
       width: 32px;
       height: 32px;
       border: 2px solid #f4f4f4;
+    }
+    &_white {
+      &:before {
+        border-color: #fff;
+        background: #fff;
+      }
     }
   }
   &__checkbox {

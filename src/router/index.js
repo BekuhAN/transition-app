@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomeView from '../views/HomeView.vue'
-import AdminView from '../views/AdminView.vue'
+import HomeView from '../views/HomeView.vue';
+import AdminView from '../views/AdminView.vue';
+import OrdersView from '../views/OrdersView.vue';
 
 Vue.use(VueRouter);
 
@@ -9,14 +10,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
   },
   {
     path: '/admin',
     name: 'home',
-    component: AdminView
+    component: AdminView,
   },
-]
+  {
+    path: '/admin/orders',
+    name: 'home',
+    component: OrdersView,
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
@@ -24,6 +30,6 @@ const router = new VueRouter({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
-})
+});
 
-export default router
+export default router;
