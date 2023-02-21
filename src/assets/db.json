@@ -1,0 +1,48 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "waylistId": 1,
+      "weight": 200,
+      "dimensions": 10,
+      "liquid": true,
+      "gragile": true,
+      "cargo": "Пищевая продукция",
+      "amount": 2,
+      "volume": 5,
+      "from": "г. Краснодар, Бородинская улица, 156",
+      "to": "г. Краснодар, улица Жлобы, 3",
+      "price": 15000,
+      "date": "01.01.2022",
+      "time": "01.01.2022"
+    }
+  ],
+  "statuses": [
+    {
+      "id": 1,
+      "status": "Завершен",
+      "orderId": 1
+    },
+    {
+      "id": 2,
+      "status": "В процессе"
+    },
+    {
+      "id": 3,
+      "status": "В обработке"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "ООО “Кармилица”",
+      "contactUser": "Иванов Иван Иванович",
+      "address": "г. Краснодар, Бородинская улица, 156",
+      "phone": "+7 (988) 888 11 22",
+      "email": "ivanov@mail.ru",
+      "inn": "7896541155",
+      "orderId": 1,
+      "statusId": 1
+    }
+  ]
+}

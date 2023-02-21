@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'App',
 
@@ -32,6 +31,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  text-align: center;
 }
 
 html,
@@ -279,6 +279,9 @@ $columns: (
   }
   &#{$prefix}offest#{$prefix}20 {
     margin-left: 20%;
+  }
+  &#{$prefix}offset#{$prefix}40 {
+    margin-left: 40%;
   }
   @each $name, $size in $columns {
     &#{$prefix}#{$name} {

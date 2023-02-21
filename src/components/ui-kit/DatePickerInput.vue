@@ -1,5 +1,5 @@
 <template>
-  <div class="input__date">
+  <div class="input__date" :class="{ input__date_white: theme === 'white' }">
     <date-picker
       :value="model"
       :type="type"
@@ -19,7 +19,7 @@ DatePicker.locale('ru', ru);
 export default {
   name: 'DatePickerInput',
   components: { DatePicker },
-  props: ['model', 'type'],
+  props: ['model', 'type', 'theme'],
   methods: {
     onInput(date) {
       this.$emit('input', new Date(date));
@@ -47,6 +47,13 @@ export default {
         height: auto;
         border-radius: 0;
         border: none;
+      }
+    }
+    &_white {
+      .mx-datepicker {
+        .mx-input {
+          background: #fff !important;
+        }
       }
     }
   }
