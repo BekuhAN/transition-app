@@ -34,6 +34,11 @@ export default {
   text-align: center;
 }
 
+input[readonly]
+{
+    outline: none;
+}
+
 html,
 body,
 div,

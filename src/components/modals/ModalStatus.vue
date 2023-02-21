@@ -4,28 +4,28 @@
     <div class="modal__content">
       <div class="row">
         <div class="col_60">
-          <InputText :label="'Клиент'" :theme="'gray'" />
+          <InputText :readOnly="true" :label="'Клиент'" :theme="'gray'" />
         </div>
         <div class="col_40">
-          <InputText :label="'Статус'" :theme="'gray'" />
+          <InputText :readOnly="true"  :label="'Статус'" :theme="'gray'" />
         </div>
       </div>
       <div class="row">
         <div class="col_60">
-          <InputText :label="'Контакнтное лицо'" :theme="'gray'" />
+          <InputText :readOnly="true"  :label="'Контакнтное лицо'" :theme="'gray'" />
         </div>
         <div class="col_40">
-          <InputText :label="'Телефон'" :theme="'gray'" />
+          <InputText :readOnly="true"  :label="'Телефон'" :theme="'gray'" />
         </div>
       </div>
       <div class="row">
         <div class="col_100">
-          <InputText :label="'Откуда'" :theme="'gray'" />
+          <InputText :readOnly="true"  :label="'Откуда'" :theme="'gray'" />
         </div>
       </div>
       <div class="row">
         <div class="col_100">
-          <InputText :label="'Куда'" :theme="'gray'" />
+          <InputText :readOnly="true"  :label="'Куда'" :theme="'gray'" />
         </div>
       </div>
     </div>
