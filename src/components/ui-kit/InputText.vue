@@ -6,18 +6,28 @@
       class="input"
       :type="type ? type : 'text'"
       :class="{ input_gray: theme === 'gray' }"
+      :name="name ? name : ''"
+      :readonly="readOnly ? 'readonly' : undefined"
+      v-model="value"
     />
   </div>
 </template>
 <script>
 export default {
-  name: 'InputText',
+  name: "InputText",
   props: {
     placeholder: String,
     label: String,
     theme: String,
     readOnly: Boolean,
-    type: String
+    type: String,
+    name: String,
+  },
+  emits: ["update:modelValue"],
+  data() {
+    return {
+      value: "",
+    };
   },
 };
 </script>

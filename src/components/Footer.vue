@@ -44,17 +44,37 @@
           </div>
         </div>
         <div class="col_50">
-          <form class="footer__form" action="">
+          <form class="footer__form" ref="form" @submit.prevent="sendEmail">
             <div class="row medium_gutter">
-              <div class="col_50"><InputText :placeholder="'Имя'" /></div>
-              <div class="col_50"><InputText :placeholder="'Фамилия'" /></div>
+              <div class="col_50">
+                <InputText :name="'user_firstname'" :placeholder="'Имя'" />
+              </div>
+              <div class="col_50">
+                <InputText :name="'user_lastname'" :placeholder="'Фамилия'" />
+              </div>
             </div>
             <div class="row medium_gutter">
-              <div class="col_50"><InputText :placeholder="'Телефон'" /></div>
-              <div class="col_50"><InputText :placeholder="'Почта'" /></div>
+              <div class="col_50">
+                <InputText
+                  :type="'tel'"
+                  :name="'user_phone'"
+                  :placeholder="'Телефон'"
+                />
+              </div>
+              <div class="col_50">
+                <InputText
+                  :name="'user_email'"
+                  :type="'email'"
+                  :placeholder="'Почта'"
+                />
+              </div>
             </div>
-            <InputText :placeholder="'Тема'" />
-            <TextArea :placeholder="'Сообщение'" class="textarea" />
+            <InputText :placeholder="'Тема'" :name="'user_theme'" />
+            <TextArea
+              :placeholder="'Сообщение'"
+              :name="'user_message'"
+              class="textarea"
+            />
             <ButtonUI :text="'ОТПРАВИТЬ'" :variant="'secondary'" />
           </form>
         </div>
@@ -63,25 +83,54 @@
   </footer>
 </template>
 <script>
-import InputText from './ui-kit/InputText.vue';
-import TextArea from './ui-kit/TextArea.vue';
-import ButtonUI from './ui-kit/Button.vue';
-import SocialItem from './SocialItem.vue';
+import InputText from "./ui-kit/InputText.vue";
+import TextArea from "./ui-kit/TextArea.vue";
+import ButtonUI from "./ui-kit/Button.vue";
+import SocialItem from "./SocialItem.vue";
+import emailjs from "emailjs-com";
 
 export default {
-  name: 'FooterLayout',
+  name: "FooterLayout",
+  data() {
+    return {};
+  },
   components: {
     InputText,
     TextArea,
     ButtonUI,
     SocialItem,
   },
+  methods: {
+    sendEmail(e) {
+      const self = this;
+      emailjs
+        .sendForm(
+          "service_2q3964d",
+          "template_pekw17p",
+          e.target,
+          "user_pIL4lQ3MMryXAHq5HwLIL"
+        )
+        .then(
+          (result) => {
+            self.isSuccess = true;
+            e.target.reset();
+            alert("SUCCESS!", result.status, result.text);
+          },
+          (error) => {
+            self.isError = true;
+            e.target.reset();
+            alert("FAILED...", error);
+          }
+        );
+    },
+  },
+  watch: {},
 };
 </script>
 <style lang="scss">
 .footer {
   text-align: left;
-  background: url('@/assets/image/bg-1.jpg') no-repeat;
+  background: url("@/assets/image/bg-1.jpg") no-repeat;
   background-size: cover;
   padding: 40px 0 90px;
   position: relative;
@@ -90,7 +139,7 @@ export default {
     z-index: 2;
   }
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: #264653;
